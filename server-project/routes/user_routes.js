@@ -17,6 +17,9 @@ const upload = multer({ storage });
 //Request para crear: recibe la URI que conforma el end point y el metodo del controlador 
 router.post("/new-user", upload.single("avatar"), userController.createUser); 
 
+// Ruta para loguear un usuario 
+router.post('/login', userController.login);
+
 // Ruta para obtener todos los usuarios
 router.get("/", userController.getUsers);
 
